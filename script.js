@@ -1,4 +1,4 @@
-var qrText = "https://hhiep00.github.io/ios";
+var qrText = "https://hhiep00.github.io/gift/gift";
 new QRCode(document.getElementById("qrcode"), qrText);
 
 const radios = document.querySelectorAll('.columns input[type="radio"]');

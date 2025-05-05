@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="vi">
 
 <head>
@@ -8,143 +9,86 @@
     <link rel="icon" type="image/png" href="./image/appstore.png">
     <link rel="stylesheet" href="./main.css">
     <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
-    <style>
-        #showBtn {
-            display: none;
-            margin: 10px;
-        }
-
-        body {
-            font-weight: bold;
-        }
-
-        input {
-            width: calc(100% - 10px);
-            min-height: 50px;
-            display: flex;
-            border: 1px solid #ccc;
-            margin: 5px;
-        }
-
-        button {
-            background-color: #9bffff;
-            width: calc(100% - 10px);
-            min-height: 50px;
-            display: flex;
-            align-items: center;
-            border: 1px solid #ccc;
-            margin: 5px;
-            font-weight: bold;
-        }
-
-        .columns label {
-            max-height: 50px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border: 1px solid #ccc;
-            margin: 5px;
-            padding: 5px 10px;
-        }
-
-        .columns input[type="radio"] {
-            width: 15px;
-            height: 15px;
-            accent-color: #007bff;
-        }
-
-        .columns label.active {
-            background-color: #a5ffad;
-            border-color: #00ff15;
-        }
-
-        fieldset {
-            width: calc(100% - 20px);
-            border: 1px dashed #ccc;
-            display: flex;
-            justify-content: center;
-            margin: 15px auto 15px;
-        }
-    </style>
 </head>
 
 <body>
     <h1 class="rainbow-animated">Lưu Gift</h1>
     <input type="text" id="inputData" placeholder="Nhập link Gift muốn lưu">
     <button onclick="sendGiftToSheet('Sheet1')">Lưu Gift - Tổng</button>
-    <button onclick="sendGiftToSheet('Dàn A')">Lưu Gift - Dàn A</button>
-    <button onclick="sendGiftToSheet('Dàn B')">Lưu Gift - Dàn B</button>
-    <button onclick="sendGiftToSheet('Dàn C')">Lưu Gift - Dàn C</button>
+    <!-- <button onclick="sendGiftToSheet('Dàn A')">Lưu Gift - Dàn A</button>
+  <button onclick="sendGiftToSheet('Dàn B')">Lưu Gift - Dàn B</button>
+  <button onclick="sendGiftToSheet('Dàn C')">Lưu Gift - Dàn C</button> -->
     <div class="columns">
-        <label><input type="radio" name="giftType" value="100" checked="">Gift 100</label>
-        <label><input type="radio" name="giftType" value="500">Gift 500</label>
-        <label><input type="radio" name="giftType" value="1000">Gift 1000</label>
-        <label><input type="radio" name="giftType" value="1000">Gift 3000</label>
-        <!-- <label><input type="radio" name="giftType" value="Check URL">Check URL</label>
-        <label><input type="radio" name="giftType" value="Check User">Check User</label> -->
+        <label><input type="radio" name="giftType" value="gift100" checked>Gift 100</label>
+        <label><input type="radio" name="giftType" value="gift500">Gift 500</label>
+        <label><input type="radio" name="giftType" value="gift1000">Gift 1000</label>
+        <label><input type="radio" name="giftType" value="gift1000">Gift 3000</label>
+        <label><input type="radio" name="giftType" value="Check URL">Check URL</label>
+        <label><input type="radio" name="giftType" value="Check User">Check User</label>
     </div>
 
-    <div class="title" style="background-color: #9bffff;padding: 10px;" id="randomDNS">37.156.216.18</div>
-    <button class="btn" onclick="copyToClipboard()">Copy Random DNS</button>
+    <!-- <div class="title" style="background-color: #9bffff;padding: 10px;" id="randomDNS">IP sẽ hiển thị ở đây</div> -->
+    <!-- <button class="btn" onclick="copyToClipboard()">Copy Random DNS</button> -->
 
-    <div style="margin: 10px;" id="qrcode" title="https://doanpbvn.github.io/ios"><canvas width="256" height="256"
-            style="display: none;"></canvas><img
-            src="data:image/png;base64,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"
-            style="display: block;"></div>
-    <footer>© 2025 - DoanPB - All Rights Reserved.</footer>
+    <div style="margin: 10px;" id="qrcode"></div>
+    <footer>&copy; 2025 - HiepDH - All Rights Reserved.</footer>
 
-    <script>
-        var qrText = "https://doanpbvn.github.io/ios";
-        new QRCode(document.getElementById("qrcode"), qrText);
+    <script src="script.js">
+        // let ipList = [];
 
-        const radios = document.querySelectorAll('.columns input[type="radio"]');
-        radios.forEach(radio => {
-            radio.addEventListener('change', () => {
-                radios.forEach(r => r.parentElement.classList.remove('active'));
-                radio.parentElement.classList.add('active');
-            });
-        });
+        // async function fetchDNSList() {
+        //     const proxyUrl = "https://api.allorigins.win/get?url=" + encodeURIComponent("https://public-dns.info/nameserver/jp.html");
+        //     const displayElement = document.getElementById("randomDNS");
 
-        let isSubmitting = false;
+        //     try {
+        //         const response = await fetch(proxyUrl);
+        //         const data = await response.json();
+        //         const parser = new DOMParser();
+        //         const doc = parser.parseFromString(data.contents, "text/html");
+        //         const rows = doc.querySelectorAll("table tbody tr");
+        //         const ipRegex = /^(?:\d{1,3}\.){3}\d{1,3}$/; // Regex for valid IPv4 addresses
+        //         ipList = Array.from(rows)
+        //             .map(row => row.querySelector("td").textContent.trim())
+        //             .filter(ip => ipRegex.test(ip)); // Filter only valid IPs
 
-        function sendGiftToSheet(sheetName) {
-            if (isSubmitting) {
-                alert("Đang tiến hành gửi, Bấm OK !");
-                return;
-            }
+        //         if (ipList.length > 0) {
+        //             setRandomIP();
+        //         } else {
+        //             displayElement.textContent = "No valid IP addresses found.";
+        //         }
+        //     } catch (error) {
+        //         console.error("Error fetching DNS list:", error);
+        //         displayElement.textContent = "Error loading DNS data.";
+        //     }
+        // }
 
-            const inputData = document.getElementById("inputData").value.trim();
-            const selectedType = document.querySelector('input[name="giftType"]:checked')?.value;
-            if (!inputData) return alert("Vui lòng nhập link gift");
-            if (!selectedType) return alert("Vui lòng chọn loại gift");
+        // function setRandomIP() {
+        //     if (ipList.length > 0) {
+        //         const randomIP = ipList[Math.floor(Math.random() * ipList.length)];
+        //         document.getElementById("randomDNS").textContent = randomIP;
+        //         return randomIP;
+        //     }
+        //     return null;
+        // }
 
-            isSubmitting = true;
-            setTimeout(() => {
-                isSubmitting = false;
-            }, 5000);
+        // function copyToClipboard() {
+        //     const ip = document.getElementById("randomDNS").textContent;
+        //     if (ip && ip !== "Error loading DNS data." && ip !== "No valid IP addresses found.") {
+        //         navigator.clipboard.writeText(ip).then(() => {
+        //             alert("Copied to clipboard: " + ip);
+        //             setRandomIP(); // Change to a new random IP after copying
+        //         }).catch((error) => {
+        //             alert("Failed to copy: " + error);
+        //         });
+        //     } else {
+        //         alert("No valid IP address to copy.");
+        //     }
+        // }
 
-            const params = new URLSearchParams({
-                sheet: sheetName,
-                type: selectedType,
-                link: inputData
-            });
-            const fullURL = "https://script.google.com/macros/s/AKfycbxBduMz54Rd-3c1Pvz8k5AdEvXHF-JyVJF3dGKHeCfdYuor3SeS1du6teBmYBzcKPaPSQ/exec?" + params.toString();
-
-            fetch(fullURL)
-                .then(res => res.ok ? res.text() : Promise.reject('Fetch lỗi'))
-                .then(data => {
-                    alert(`✅ Lưu Thành Công ${data}`);
-                    location.reload();
-                })
-                .catch(err => {
-                    console.error(err);
-                    alert("❌ Có lỗi xảy ra, vui lòng thử lại!");
-                });
-        }
+        // Load the DNS list on page load
+        // window.onload = fetchDNSList;
     </script>
 
-
-
-</body><ddict-div style="visibility: visible !important;"></ddict-div>
+</body>
 
 </html>
