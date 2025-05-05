@@ -4,7 +4,7 @@
      <meta charset="UTF-8">
      <meta name="theme-color" content="#06c1db">
      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-     <title>iOS Support - Hiệp</title>
+     <title>iOS Support - Thắng</title>
      <link rel="icon" type="image/png" href="./image/appstore.png">
      <link rel="stylesheet" href="./main.css">
      <style>
@@ -14,7 +14,7 @@
  </head>
  <body>
      <main>
-         <h1 class="rainbow-animated">Hiệp</h1>
+         <h1 class="rainbow-animated">Thắng</h1>
          <div style="margin: 10px;" id="qrcode"></div>
          <button class="text_URL" id="toggleBtn">Hiện Copy Text</button>
          <div id="showBtn">
@@ -37,7 +37,7 @@
          <fieldset class="btn"><input value="/private/var/mobile/Library/ADManager"><button>Copy Text</button></fieldset>
      </main>
      <script>
-         var qrText = "https://hhiep00.github.io/ios";
+         var qrText = "https://hhiep00.github.io/gift";
          new QRCode(document.getElementById("qrcode"), qrText);
          //Copy Text
          document.addEventListener('click', e => {if (e.target.tagName === 'BUTTON') {const input = e.target.previousElementSibling;if (input?.tagName === 'INPUT') {navigator.clipboard.writeText(input.value).catch(console.error);}}});
