@@ -32,7 +32,7 @@ function sendGiftToSheet(sheetName) {
         giftType: selectedType,
         link: inputData
     });
-    const url = 'https://script.google.com/macros/s/AKfycbyPer5xvPn-7aOdmGUzcdD23y86c-3vNu0gdF9DO_bbgYA2MonJ6J8eaxGgeVWqZdg/exec';
+    const url = 'https://script.google.com/macros/s/AKfycbwyae9mMYYH5iRrCXbDm94s38kSTeuVFcxyPH2hMEolUIyd4eBx7co7ysx018rfciLE/exec';
 
     console.log(sheetName, selectedType, inputData);
     fetch(url, {
