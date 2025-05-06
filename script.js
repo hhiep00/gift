@@ -32,7 +32,7 @@ function sendGiftToSheet(sheetName) {
         giftType: selectedType,
         link: inputData
     });
-    const url = 'https://script.google.com/macros/s/AKfycbwyae9mMYYH5iRrCXbDm94s38kSTeuVFcxyPH2hMEolUIyd4eBx7co7ysx018rfciLE/exec';
+    const url = 'https://script.google.com/macros/s/AKfycbzAiKPt8K16i-WzxLkSSVjwt-atTHA4CV5H-Xavys2Zjxy67ifLRcyyIrdCdBYY_5ug/exec';
 
     console.log(sheetName, selectedType, inputData);
     fetch(url, {
@@ -42,8 +42,13 @@ function sendGiftToSheet(sheetName) {
     })
         .then(res => res.ok ? res.text() : Promise.reject('Lưu lỗi'))
         .then(data => {
-            data === 'Success' ? alert('✅ Lưu Thành Công') : alert(`❌ Lưu Lỗi: ${data}`);
-            location.reload();
+            if (data.startsWith('Success')) {
+                const stt = data.split('-')[1]; 
+                alert(`✅ Lưu thành công: ${selectedType}, STT ${stt}`);
+            } else {
+                alert(`❌ Lưu lỗi: ${data}`);
+            }
+            // location.reload();
         })
         .catch(err => {
             console.error(err);
