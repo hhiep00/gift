@@ -35,7 +35,7 @@ function sendGiftToSheet(sheetName) {
     const url = 'https://script.google.com/macros/s/AKfycbzAiKPt8K16i-WzxLkSSVjwt-atTHA4CV5H-Xavys2Zjxy67ifLRcyyIrdCdBYY_5ug/exec';
 
     console.log(sheetName, selectedType, inputData);
-    fetch(url, {
+    fetch(`${url}?action=saveGifts`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: params
@@ -43,7 +43,7 @@ function sendGiftToSheet(sheetName) {
         .then(res => res.ok ? res.text() : Promise.reject('Lưu lỗi'))
         .then(data => {
             if (data.startsWith('Success')) {
-                const stt = data.split('-')[1]; 
+                const stt = data.split('-')[1];
                 alert(`✅ Lưu thành công: ${selectedType}, STT ${stt}`);
             } else {
                 alert(`❌ Lưu lỗi: ${data}`);

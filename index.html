@@ -1,55 +1,102 @@
 <!DOCTYPE html>
- <html lang="vi">
- <head>
-     <meta charset="UTF-8">
-     <meta name="theme-color" content="#06c1db">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-     <title>iOS Support - Thắng</title>
-     <link rel="icon" type="image/png" href="./image/appstore.png">
-     <link rel="stylesheet" href="./main.css">
-     <style>
-         #showBtn {display: none; margin: 10px;}
-     </style>
-     <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
- </head>
- <body>
-     <main>
-         <h1 class="rainbow-animated">Thắng</h1>
-         <div style="margin: 10px;" id="qrcode"></div>
-         <button class="text_URL" id="toggleBtn">Hiện Copy Text</button>
-         <div id="showBtn">
-             <fieldset class="btn"><input value=""><button>Copy Text</button></fieldset>
-             <fieldset class="btn"><input value=""><button>Copy Text</button></fieldset>
-         </div>
-         <a class="text_URL" href="https://hhiep00.github.io/gift/gift.html" target="_blank"><img class="icon" src="./image/shortcut.png">Lưu gift</a>
-         <!-- <a class="text_URL" href="./src/ProxyScreenshotBypass_0106.dylib" target="_blank"><img class="icon" src="./image/downloads.png">Download ProxyScreenshotBypass_0106</a> -->
-         <!-- <a class="text_URL" href="./src/1-AppsManager_1.8.4_Crack.tipa" target="_blank"><img class="icon" src="./image/downloads.png">Download Apps Manager</a> -->
-         <!-- <a class="text_URL" href="./src/2-Filza_NoUrlScheme_4.0Crack@巨魔商店.tipa" target="_blank"><img class="icon" src="./image/downloads.png">Download Filza</a> -->
-         <!-- <a class="text_URL" href="./src/data-full.zip" target="_blank"><img class="icon" src="./image/downloads.png">Download Data Settings</a> -->
-         <!-- <a class="text_URL" href="./backup.html" target="_blank"><img class="icon" src="./image/Bookmarklet.png">Tạo Bookmarklet</a> -->
-         <!-- <a class="text_URL" href="https://havoc.app/package/trollfools/" target="_blank"><img class="icon" src="./image/trollfood.webp">Download TrollFools New</a>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#06c1db">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>iOS Support - Thắng</title>
+    <link rel="icon" type="image/png" href="./image/appstore.png">
+    <link rel="stylesheet" href="./main.css">
+    <style>
+        #showBtn {
+            display: none;
+            margin: 10px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+</head>
+
+<body>
+    <main>
+        <h1 class="rainbow-animated">Thắng</h1>
+        <div style="margin: 10px;" id="qrcode"></div>
+        <button class="text_URL" id="toggleBtn">Hiện Copy Text</button>
+        <div id="showBtn">
+            <fieldset class="btn"><input value=""><button>Copy Text</button></fieldset>
+            <fieldset class="btn"><input value=""><button>Copy Text</button></fieldset>
+        </div>
+        <a class="text_URL" href="https://hhiep00.github.io/gift/gift.html" target="_blank"><img class="icon"
+                src="./image/shortcut.png">Lưu gift</a>
+        <!-- <a class="text_URL" href="./src/ProxyScreenshotBypass_0106.dylib" target="_blank"><img class="icon" src="./image/downloads.png">Download ProxyScreenshotBypass_0106</a> -->
+        <!-- <a class="text_URL" href="./src/1-AppsManager_1.8.4_Crack.tipa" target="_blank"><img class="icon" src="./image/downloads.png">Download Apps Manager</a> -->
+        <!-- <a class="text_URL" href="./src/2-Filza_NoUrlScheme_4.0Crack@巨魔商店.tipa" target="_blank"><img class="icon" src="./image/downloads.png">Download Filza</a> -->
+        <!-- <a class="text_URL" href="./src/data-full.zip" target="_blank"><img class="icon" src="./image/downloads.png">Download Data Settings</a> -->
+        <!-- <a class="text_URL" href="./backup.html" target="_blank"><img class="icon" src="./image/Bookmarklet.png">Tạo Bookmarklet</a> -->
+        <!-- <a class="text_URL" href="https://havoc.app/package/trollfools/" target="_blank"><img class="icon" src="./image/trollfood.webp">Download TrollFools New</a>
          <a class="text_URL" href="https://ios.cfw.guide/installing-trollstore-trollrestore/" target="_blank"><img class="icon" src="./image/TrollStore.jpg">Add TrollStore For PC-Mac</a>
          <a class="text_URL" href="https://ios.cfw.guide/installing-trollstore-trollhelperota/" target="_blank"><img class="icon" src="./image/TrollStore.jpg">TrollHelperOTA</a>
          <a class="text_URL" href="https://tigisoftware.com/repo/" target="_blank"><img class="icon" src="https://getsileo.app/img/icon.png">Add Tigisoftware Sileo</a>
          <a class="text_URL" href="https://www.icloud.com/shortcuts/17b0a2589825439aa71e7bf1d4fd7d43" target="_blank"><img class="icon" src="./image/shortcut.png">Add Shortcut Tiktok 60p</a> -->
-         <!-- <a class="text_URL" href="https://www.icloud.com/shortcuts/41005f1838684245b4d256da082532a9" target="_blank"><img class="icon" src="./image/shortcut.png">Add Shortcut Tiktok 30p</a> -->
-         <fieldset class="btn"><input value="/private/var/mobile/Library/Preferences/iFakePro/main"><button>Copy Text</button></fieldset>
-         <fieldset class="btn"><input value="/private/var/mobile/Library/ADManager"><button>Copy Text</button></fieldset>
-     </main>
-     <script>
-         var qrText = "https://hhiep00.github.io/gift";
-         new QRCode(document.getElementById("qrcode"), qrText);
-         //Copy Text
-         document.addEventListener('click', e => {if (e.target.tagName === 'BUTTON') {const input = e.target.previousElementSibling;if (input?.tagName === 'INPUT') {navigator.clipboard.writeText(input.value).catch(console.error);}}});
-         //Toggle Button
-         const toggleBtn = document.getElementById('toggleBtn');
-         const showBtn = document.getElementById('showBtn');
-         toggleBtn.addEventListener('click', () => {
-         const isVisible = showBtn.style.display === 'block';
-         showBtn.style.display = isVisible ? 'none' : 'block';
-         toggleBtn.textContent = isVisible ? 'Hiện Copy Text' : 'Ẩn';
-         });
-       </script>
-     <footer style="text-align: center;">&copy; 2025 - HiepDH - All Rights Reserved.</footer>
- </body>
- </html>
+        <!-- <a class="text_URL" href="https://www.icloud.com/shortcuts/41005f1838684245b4d256da082532a9" target="_blank"><img class="icon" src="./image/shortcut.png">Add Shortcut Tiktok 30p</a> -->
+        <fieldset class="btn"><input value="/private/var/mobile/Library/Preferences/iFakePro/main"><button>Copy
+                Text</button></fieldset>
+        <fieldset class="btn"><input value="/private/var/mobile/Library/ADManager"><button>Copy Text</button></fieldset>
+        <div id="fieldsetsContainer"></div>
+    </main>
+    <script>
+        var qrText = "https://hhiep00.github.io/gift";
+        new QRCode(document.getElementById("qrcode"), qrText);
+        //Copy Text
+        document.addEventListener('click', e => { if (e.target.tagName === 'BUTTON') { const input = e.target.previousElementSibling; if (input?.tagName === 'INPUT') { navigator.clipboard.writeText(input.value).catch(console.error); } } });
+        //Toggle Button
+        const toggleBtn = document.getElementById('toggleBtn');
+        const showBtn = document.getElementById('showBtn');
+        toggleBtn.addEventListener('click', () => {
+            const isVisible = showBtn.style.display === 'block';
+            showBtn.style.display = isVisible ? 'none' : 'block';
+            toggleBtn.textContent = isVisible ? 'Hiện Copy Text' : 'Ẩn';
+        });
+
+        async function fetchAccounts() {
+            const url = 'https://script.google.com/macros/s/AKfycbzAiKPt8K16i-WzxLkSSVjwt-atTHA4CV5H-Xavys2Zjxy67ifLRcyyIrdCdBYY_5ug/exec';
+            const response = await fetch(`${url}?action=getAccounts`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: 'fetch=1' // You can change this based on what your script expects
+            });
+
+            const accounts = await response.json();
+
+            const container = document.getElementById('fieldsetsContainer');
+            container.innerHTML = '';
+
+            accounts.forEach(acc => {
+                const fieldset = document.createElement('fieldset');
+                fieldset.className = 'btn';
+
+                const input = document.createElement('input');
+                input.value = acc;
+
+                const button = document.createElement('button');
+                button.textContent = 'Copy Text';
+                button.onclick = () => {
+                    navigator.clipboard.writeText(acc);
+                    alert('Copied: ' + acc);
+                };
+
+                fieldset.appendChild(input);
+                fieldset.appendChild(button);
+                container.appendChild(fieldset);
+            });
+        }
+
+        // Call it on page load
+        window.onload = fetchAccounts;
+    </script>
+    <footer style="text-align: center;">&copy; 2025 - HiepDH - All Rights Reserved.</footer>
+</body>
+
+</html>
