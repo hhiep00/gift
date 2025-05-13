@@ -27,7 +27,9 @@
             <fieldset class="btn"><input value=""><button>Copy Text</button></fieldset>
         </div>
         <a class="text_URL" href="https://hhiep00.github.io/gift/gift.html" target="_blank"><img class="icon"
-                src="./image/shortcut.png">Lưu gift</a>
+                src="./img/diskette.png" width="24" height="24">Lưu gift</a>
+        <a class="text_URL" href="https://hhiep00.github.io/gift/list-account.html" target="_blank"><img class="icon"
+                src="./img/customer.png" width="24" height="24">Danh sách account</a>
         <!-- <a class="text_URL" href="./src/ProxyScreenshotBypass_0106.dylib" target="_blank"><img class="icon" src="./image/downloads.png">Download ProxyScreenshotBypass_0106</a> -->
         <!-- <a class="text_URL" href="./src/1-AppsManager_1.8.4_Crack.tipa" target="_blank"><img class="icon" src="./image/downloads.png">Download Apps Manager</a> -->
         <!-- <a class="text_URL" href="./src/2-Filza_NoUrlScheme_4.0Crack@巨魔商店.tipa" target="_blank"><img class="icon" src="./image/downloads.png">Download Filza</a> -->
@@ -42,8 +44,10 @@
         <!-- <fieldset class="btn"><input value="/private/var/mobile/Library/Preferences/iFakePro/main"><button>Copy
                 Text</button></fieldset>
         <fieldset class="btn"><input value="/private/var/mobile/Library/ADManager"><button>Copy Text</button></fieldset> -->
-        <div id="fieldsetsContainer"></div>
+        <!-- <div id="fieldsetsContainer"></div> -->
     </main>
+    <script src="config.js"></script>
+    <script src="copy-account.js"></script>
     <script>
         var qrText = "https://hhiep00.github.io/gift";
         new QRCode(document.getElementById("qrcode"), qrText);
@@ -57,44 +61,6 @@
             showBtn.style.display = isVisible ? 'none' : 'block';
             toggleBtn.textContent = isVisible ? 'Hiện Copy Text' : 'Ẩn';
         });
-
-        async function fetchAccounts() {
-            const url = 'https://script.google.com/macros/s/AKfycbzAiKPt8K16i-WzxLkSSVjwt-atTHA4CV5H-Xavys2Zjxy67ifLRcyyIrdCdBYY_5ug/exec';
-            const response = await fetch(`${url}?action=getAccounts`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: 'fetch=1' // You can change this based on what your script expects
-            });
-
-            const accounts = await response.json();
-
-            const container = document.getElementById('fieldsetsContainer');
-            container.innerHTML = '';
-
-            accounts.forEach(acc => {
-                const fieldset = document.createElement('fieldset');
-                fieldset.className = 'btn';
-
-                const input = document.createElement('input');
-                input.value = acc;
-
-                const button = document.createElement('button');
-                button.textContent = 'Copy Text';
-                button.onclick = () => {
-                    navigator.clipboard.writeText(acc);
-                    alert('Copied: ' + acc);
-                };
-
-                fieldset.appendChild(input);
-                fieldset.appendChild(button);
-                container.appendChild(fieldset);
-            });
-        }
-
-        // Call it on page load
-        window.onload = fetchAccounts;
     </script>
     <footer style="text-align: center;">&copy; 2025 - HiepDH - All Rights Reserved.</footer>
 </body>

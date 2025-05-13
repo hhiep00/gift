@@ -10,6 +10,7 @@ radios.forEach(radio => {
 });
 
 let isSubmitting = false;
+const url = CONFIG.GS_URL;
 
 function sendGiftToSheet(sheetName) {
     if (isSubmitting) {
@@ -32,7 +33,7 @@ function sendGiftToSheet(sheetName) {
         giftType: selectedType,
         link: inputData
     });
-    const url = 'https://script.google.com/macros/s/AKfycbzAiKPt8K16i-WzxLkSSVjwt-atTHA4CV5H-Xavys2Zjxy67ifLRcyyIrdCdBYY_5ug/exec';
+    
 
     console.log(sheetName, selectedType, inputData);
     fetch(`${url}?action=saveGifts`, {
