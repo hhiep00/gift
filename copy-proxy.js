@@ -2,7 +2,7 @@
 
 async function fetchAccounts() {
     const url = CONFIG.GS_URL;
-    const response = await fetch(`${url}?action=getAccounts&sheetName=copy account`, {
+    const response = await fetch(`${url}?action=getAccounts&sheetName=list proxy`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -33,7 +33,7 @@ async function fetchAccounts() {
         deleteButton.style.marginLeft = '5px';
         deleteButton.onclick = async () => {
             if (confirm(`Delete "${acc}" from the sheet?`)) {
-                const deleteResponse = await fetch(`${url}?action=deleteAccount&sheetName=copy account`, {
+                const deleteResponse = await fetch(`${url}?action=deleteAccount&sheetName=list proxy`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded'
