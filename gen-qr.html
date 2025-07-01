@@ -1,0 +1,103 @@
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#06c1db">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>iOS Support - Thắng</title>
+    <link rel="icon" type="image/png" href="./image/appstore.png">
+    <link rel="stylesheet" href="./main.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+    <style>
+        #showBtn {
+            display: none;
+            margin: 10px;
+        }
+
+        body {
+            font-weight: bold;
+        }
+
+        input {
+            width: calc(100% - 10px);
+            min-height: 50px;
+            display: flex;
+            border: 1px solid #ccc;
+            margin: 5px;
+        }
+
+        button {
+            background-color: #9bffff;
+            width: calc(100% - 10px);
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            margin: 5px;
+            font-weight: bold;
+        }
+
+        .columns label {
+            max-height: 50px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid #ccc;
+            margin: 5px;
+            padding: 5px 10px;
+        }
+
+        .columns input[type="radio"] {
+            width: 15px;
+            height: 15px;
+            accent-color: #007bff;
+        }
+
+        .columns label.active {
+            background-color: #a5ffad;
+            border-color: #00ff15;
+        }
+
+        fieldset {
+            width: calc(100% - 20px);
+            border: 1px dashed #ccc;
+            display: flex;
+            justify-content: center;
+            margin: 15px auto 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="rainbow-animated">Lưu Gift</h1>
+    <input type="text" id="inputData" placeholder="Nhập link Gift muốn lưu">
+    <button onclick="generateQRCode()">Tạo QR Code</button>
+
+    <div style="margin: 10px;" id="qrcode" "><canvas width="256" height="256"
+            style="display: none;"></canvas>
+    </div>
+    <footer>© 2025 - ThangLD - All Rights Reserved.</footer>
+    <script>
+        function generateQRCode() {
+        const inputText = document.getElementById("inputData").value.trim();
+        const qrContainer = document.getElementById("qrcode");
+
+        // Clear existing QR code
+        qrContainer.innerHTML = "";
+
+        if (!inputText) {
+            alert("Vui lòng nhập nội dung để tạo QR code!");
+            return;
+        }
+
+        new QRCode(qrContainer, {
+            text: inputText,
+            width: 256,
+            height: 256
+        });
+    }
+    </script>
+
+</body>
+
+</html>
